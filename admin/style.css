@@ -1,0 +1,499 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #080808;
+  --card: #111111;
+  --card-hover: #151515;
+  --border: #242424;
+  --text: #ffffff;
+  --muted: #969696;
+  --accent: #a3ff12;
+  --danger: #ff5c5c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 42px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.eyebrow {
+  margin-top: 28px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.login-card h1 {
+  margin-top: 10px;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.muted {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.login-card > .muted {
+  margin-top: 12px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  margin: 20px 0 9px;
+  color: #dcdcdc;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  background: #0b0b0b;
+  color: var(--text);
+  padding: 14px 15px;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+input {
+  min-height: 48px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(163, 255, 18, 0.08);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #5e5e5e;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn,
+.logout-btn {
+  border-radius: 10px;
+  min-height: 46px;
+  padding: 12px 18px;
+  font-weight: 800;
+  border: 1px solid transparent;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: #050505;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.secondary-btn:hover {
+  background: var(--card-hover);
+}
+
+.login-card .primary-btn {
+  margin-top: 22px;
+}
+
+.message {
+  min-height: 22px;
+  margin-top: 14px;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 74px;
+  padding: 0 5%;
+  background: rgba(8, 8, 8, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+}
+
+.admin-label {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.logout-btn {
+  min-height: 40px;
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.logout-btn:hover {
+  background: var(--card);
+}
+
+.dashboard-content {
+  width: min(1050px, 90%);
+  margin: 0 auto;
+  padding: 65px 0 100px;
+}
+
+.dashboard-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.dashboard-heading .eyebrow {
+  margin-top: 0;
+}
+
+.dashboard-heading h1 {
+  margin-top: 10px;
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: -0.05em;
+}
+
+.dashboard-heading .muted {
+  margin-top: 12px;
+}
+
+.save-status {
+  flex-shrink: 0;
+  color: var(--accent);
+  border: 1px solid rgba(163, 255, 18, 0.25);
+  background: rgba(163, 255, 18, 0.06);
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   ADMIN CARDS
+========================= */
+
+.admin-card {
+  margin-bottom: 24px;
+  padding: 30px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.card-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.card-heading h2 {
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+
+.field-group {
+  margin-bottom: 4px;
+}
+
+.save-btn {
+  margin-top: 24px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-editor {
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #0d0d0d;
+}
+
+.service-editor label {
+  margin-top: 0;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-admin {
+  position: relative;
+  padding: 22px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #0d0d0d;
+}
+
+.project-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.project-admin-header strong {
+  font-size: 14px;
+}
+
+.delete-project {
+  border: 0;
+  background: transparent;
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-admin input,
+.project-admin textarea {
+  margin-bottom: 10px;
+}
+
+#addProjectBtn {
+  margin-top: 5px;
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview-card {
+  text-align: center;
+  padding: 45px 30px;
+}
+
+.preview-card .eyebrow {
+  margin-top: 0;
+}
+
+.preview-card h2 {
+  margin-top: 10px;
+  font-size: 28px;
+}
+
+.preview-card .muted {
+  margin: 10px auto 25px;
+  max-width: 500px;
+}
+
+.preview-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+  .login-card {
+    padding: 30px 22px;
+    border-radius: 16px;
+  }
+
+  .login-card h1 {
+    font-size: 31px;
+  }
+
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .dashboard-content {
+    width: min(94%, 1050px);
+    padding-top: 40px;
+  }
+
+  .dashboard-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .admin-card {
+    padding: 22px 18px;
+    border-radius: 15px;
+  }
+
+  .card-heading h2 {
+    font-size: 20px;
+  }
+
+  .project-admin {
+    padding: 17px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .preview-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .topbar {
+    min-height: 68px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .logout-btn {
+    padding: 9px 12px;
+    min-height: 38px;
+  }
+
+  .dashboard-heading h1 {
+    font-size: 32px;
+  }
+}
