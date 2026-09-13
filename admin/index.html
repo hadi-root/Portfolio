@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HADI Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <div id="loginPage" class="page">
+
+    <div class="login-orbit orbit-one"></div>
+    <div class="login-orbit orbit-two"></div>
+
+    <div class="login-card">
+
+      <div class="brand">HADI</div>
+
+      <p class="eyebrow">PORTFOLIO ADMIN</p>
+
+      <h1>Welcome back.</h1>
+
+      <p class="muted">
+        Sign in to manage your portfolio.
+      </p>
+
+      <form id="loginForm">
+
+        <label for="email">Email</label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Admin email"
+          autocomplete="email"
+          required
+        >
+
+        <label for="password">Password</label>
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          autocomplete="current-password"
+          required
+        >
+
+        <button type="submit" class="primary-btn">
+          Sign In
+        </button>
+
+        <p id="loginMessage" class="message"></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- DASHBOARD -->
+  <div id="dashboardPage" class="dashboard hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+
+        <div class="brand">HADI</div>
+        <span class="admin-label">PORTFOLIO ADMIN</span>
+
+        <nav class="sidebar-nav">
+
+          <a href="#section-about">
+            <span class="nav-number">01</span> About
+          </a>
+
+          <a href="#section-skills">
+            <span class="nav-number">02</span> Skills
+          </a>
+
+          <a href="#section-services">
+            <span class="nav-number">03</span> Services
+          </a>
+
+          <a href="#section-contact">
+            <span class="nav-number">04</span> Contact
+          </a>
+
+          <a href="#section-projects">
+            <span class="nav-number">05</span> Projects
+          </a>
+
+        </nav>
+
+      </div>
+
+      <button id="logoutBtn" class="logout-btn">
+        Logout
+      </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-content">
+
+      <div class="dashboard-heading">
+
+        <div>
+          <p class="eyebrow">CONTROL PANEL</p>
+          <h1>Portfolio Dashboard</h1>
+          <p class="muted">
+            Manage your portfolio content from one place.
+          </p>
+        </div>
+
+        <span id="saveStatus" class="save-status">
+          Ready
+        </span>
+
+      </div>
+
+
+      <!-- ABOUT -->
+
+      <section class="admin-card" id="section-about">
+
+        <div class="card-glow"></div>
+
+        <div class="card-heading">
+          <span class="number">01</span>
+          <h2>About</h2>
+        </div>
+
+        <label for="aboutIntro">Introduction</label>
+        <textarea
+          id="aboutIntro"
+          rows="4"
+          placeholder="Write your introduction..."
+        ></textarea>
+
+        <label for="aboutDescription">Description</label>
+        <textarea
+          id="aboutDescription"
+          rows="5"
+          placeholder="Tell visitors about yourself..."
+        ></textarea>
+
+        <label for="aboutTools">Development workflow</label>
+        <textarea
+          id="aboutTools"
+          rows="4"
+          placeholder="Describe your development workflow..."
+        ></textarea>
+
+        <button class="primary-btn save-btn" data-section="about">
+          Save About
+        </button>
+
+      </section>
+
+
+      <!-- SKILLS -->
+
+      <section class="admin-card" id="section-skills">
+
+        <div class="card-glow"></div>
+
+        <div class="card-heading">
+          <span class="number">02</span>
+          <h2>Skills</h2>
+        </div>
+
+        <div class="field-group">
+          <label>Web Development</label>
+          <input id="skillWeb" type="text" placeholder="HTML, CSS, JavaScript">
+        </div>
+
+        <div class="field-group">
+          <label>Web Design</label>
+          <input id="skillDesign" type="text" placeholder="UI, UX, Responsive">
+        </div>
+
+        <div class="field-group">
+          <label>Development Tools</label>
+          <input id="skillTools" type="text" placeholder="GitHub, Firebase, AI Tools">
+        </div>
+
+        <button class="primary-btn save-btn" data-section="skills">
+          Save Skills
+        </button>
+
+      </section>
+
+
+      <!-- SERVICES -->
+
+      <section class="admin-card" id="section-services">
+
+        <div class="card-glow"></div>
+
+        <div class="card-heading">
+          <span class="number">03</span>
+          <h2>Services</h2>
+        </div>
+
+        <div class="service-editor">
+          <label>Service 01</label>
+          <input id="service1Title" type="text" placeholder="Portfolio Websites">
+          <textarea id="service1Description" rows="3" placeholder="Service description..."></textarea>
+        </div>
+
+        <div class="service-editor">
+          <label>Service 02</label>
+          <input id="service2Title" type="text" placeholder="Business Websites">
+          <textarea id="service2Description" rows="3" placeholder="Service description..."></textarea>
+        </div>
+
+        <div class="service-editor">
+          <label>Service 03</label>
+          <input id="service3Title" type="text" placeholder="Custom Projects">
+          <textarea id="service3Description" rows="3" placeholder="Service description..."></textarea>
+        </div>
+
+        <button class="primary-btn save-btn" data-section="services">
+          Save Services
+        </button>
+
+      </section>
+
+
+      <!-- CONTACT -->
+
+      <section class="admin-card" id="section-contact">
+
+        <div class="card-glow"></div>
+
+        <div class="card-heading">
+          <span class="number">04</span>
+          <h2>Contact</h2>
+        </div>
+
+        <label>Email</label>
+        <input id="contactEmail" type="email" placeholder="your@email.com">
+
+        <label>GitHub</label>
+        <input id="contactGithub" type="url" placeholder="https://github.com/username">
+
+        <label>Personal Instagram</label>
+        <input id="contactInstagram" type="url" placeholder="https://instagram.com/...">
+
+        <label>Build With ROOT HUB</label>
+        <input id="contactRootHub" type="url" placeholder="https://instagram.com/buildwithroothub/">
+
+        <button class="primary-btn save-btn" data-section="contact">
+          Save Contact
+        </button>
+
+      </section>
+
+
+      <!-- PROJECTS -->
+
+      <section class="admin-card" id="section-projects">
+
+        <div class="card-glow"></div>
+
+        <div class="card-heading">
+          <span class="number">05</span>
+          <h2>Projects</h2>
+        </div>
+
+        <div id="projectsContainer"></div>
+
+        <button id="addProjectBtn" class="secondary-btn" type="button">
+          + Add Project
+        </button>
+
+        <button id="saveProjectsBtn" class="primary-btn save-btn" type="button">
+          Save Projects
+        </button>
+
+      </section>
+
+
+      <!-- PREVIEW -->
+
+      <section class="admin-card preview-card">
+
+        <p class="eyebrow">PUBLIC WEBSITE</p>
+        <h2>View Your Portfolio</h2>
+        <p class="muted">
+          Open your public portfolio to check your changes.
+        </p>
+
+        <a href="../" target="_blank" class="primary-btn preview-btn">
+          Open Portfolio ↗
+        </a>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- Firebase -->
+  <script type="module">
+
+    import { initializeApp }
+      from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+    import {
+      getAuth,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      signOut
+    }
+    from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+    import {
+      getFirestore,
+      doc,
+      getDoc,
+      setDoc
+    }
+    from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyBUBGAWZ7sdQ8rnyMN9uhng9P6InAjnzYs",
+
+      authDomain:
+        "hadi-portfolio-236ef.firebaseapp.com",
+
+      projectId:
+        "hadi-portfolio-236ef",
+
+      storageBucket:
+        "hadi-portfolio-236ef.firebasestorage.app",
+
+      messagingSenderId:
+        "417673820671",
+
+      appId:
+        "1:417673820671:web:f798cf24a9394135b44fca"
+
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+
+    const db = getFirestore(app);
+
+
+    window.firebaseAdmin = {
+      auth,
+      db,
+      signInWithEmailAndPassword,
+      signOut,
+      onAuthStateChanged,
+      doc,
+      getDoc,
+      setDoc
+    };
+
+    window.dispatchEvent(
+      new Event("firebase-ready")
+    );
+
+  </script>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

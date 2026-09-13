@@ -1,0 +1,683 @@
+/* =========================================================
+   HADI ADMIN
+   Matches the public site's design language
+========================================================= */
+
+:root {
+  --bg: #050505;
+  --surface: #0d0d0d;
+  --surface-2: #111111;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --text: #f5f5f5;
+  --text-soft: #b5b5b5;
+  --text-muted: #707070;
+
+  --accent: #42a5ff;
+  --accent-bright: #75c4ff;
+  --danger: #ff5c5c;
+
+  --radius: 18px;
+
+  --shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+
+  --transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family:
+    "Space Grotesk",
+    "Inter",
+    sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.login-orbit {
+  position: absolute;
+  border: 1px solid rgba(66, 165, 255, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 650px;
+  height: 650px;
+  right: -220px;
+  top: 50%;
+  transform: translateY(-50%) rotate(15deg);
+}
+
+.orbit-two {
+  width: 900px;
+  height: 430px;
+  left: -250px;
+  bottom: -100px;
+  transform: rotate(-20deg);
+}
+
+.login-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 430px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.01)
+    );
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 42px;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.eyebrow {
+  margin-top: 28px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.login-card h1 {
+  margin-top: 10px;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.login-card > .muted {
+  margin-top: 12px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  margin: 20px 0 9px;
+  color: #dcdcdc;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  background: #0b0b0b;
+  color: var(--text);
+  padding: 14px 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input {
+  min-height: 48px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(66, 165, 255, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #5e5e5e;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn,
+.logout-btn {
+  border-radius: 10px;
+  min-height: 46px;
+  padding: 12px 18px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.primary-btn {
+  background: var(--text);
+  color: #050505;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.secondary-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-bright);
+}
+
+.login-card .primary-btn {
+  margin-top: 22px;
+}
+
+.message {
+  min-height: 22px;
+  margin-top: 14px;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 22px;
+  border-right: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.sidebar-top .brand {
+  font-size: 22px;
+}
+
+.admin-label {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 40px;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.sidebar-nav a:hover {
+  background: rgba(66, 165, 255, 0.07);
+  color: var(--accent-bright);
+}
+
+.nav-number {
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.logout-btn {
+  background: transparent;
+  color: var(--text-soft);
+  border-color: var(--border);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 92, 92, 0.08);
+  color: var(--danger);
+  border-color: rgba(255, 92, 92, 0.3);
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.dashboard-content {
+  flex: 1;
+  min-width: 0;
+  padding: 56px clamp(24px, 5vw, 64px) 100px;
+}
+
+.dashboard-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.dashboard-heading .eyebrow {
+  margin-top: 0;
+}
+
+.dashboard-heading h1 {
+  margin-top: 10px;
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+.dashboard-heading .muted {
+  margin-top: 12px;
+}
+
+.save-status {
+  flex-shrink: 0;
+  color: var(--accent-bright);
+  border: 1px solid rgba(66, 165, 255, 0.25);
+  background: rgba(66, 165, 255, 0.06);
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   ADMIN CARDS
+========================= */
+
+.admin-card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+  padding: 30px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.01)
+    );
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.admin-card:hover {
+  border-color: rgba(66, 165, 255, 0.25);
+}
+
+.card-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: -150px;
+  right: -100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(66, 165, 255, 0.13), transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.card-heading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 25px;
+}
+
+.number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.card-heading h2 {
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.field-group {
+  margin-bottom: 4px;
+}
+
+.save-btn {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-editor {
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.service-editor label {
+  margin-top: 0;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-admin {
+  position: relative;
+  padding: 22px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.project-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.project-admin-header strong {
+  font-size: 14px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.delete-project {
+  border: 0;
+  background: transparent;
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-admin input,
+.project-admin textarea {
+  margin-bottom: 10px;
+}
+
+#addProjectBtn {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview-card {
+  text-align: center;
+  padding: 45px 30px;
+}
+
+.preview-card .eyebrow {
+  margin-top: 0;
+}
+
+.preview-card h2 {
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.preview-card .muted {
+  margin: 10px auto 25px;
+  max-width: 500px;
+}
+
+.preview-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 980px) {
+
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-top {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .sidebar-top .brand {
+    font-size: 18px;
+  }
+
+  .admin-label {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 2px;
+    overflow-x: auto;
+  }
+
+  .sidebar-nav a {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .logout-btn {
+    padding: 9px 14px;
+    min-height: 38px;
+  }
+
+  .dashboard-content {
+    padding: 32px 20px 80px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .login-card {
+    padding: 30px 22px;
+    border-radius: 16px;
+  }
+
+  .login-card h1 {
+    font-size: 31px;
+  }
+
+  .dashboard-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .admin-card {
+    padding: 22px 18px;
+  }
+
+  .card-heading h2 {
+    font-size: 20px;
+  }
+
+  .project-admin {
+    padding: 17px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  #addProjectBtn {
+    margin-right: 0;
+  }
+
+  .preview-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .sidebar-nav a {
+    font-size: 0.7rem;
+  }
+
+  .dashboard-heading h1 {
+    font-size: 32px;
+  }
+}
